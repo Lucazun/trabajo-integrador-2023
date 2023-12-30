@@ -32,7 +32,7 @@ h2 { font-family: 'Cormorant Garamond', serif;
 
 
 
- body, h1, h2, h3, p1, p2, header {
+ body, h1, h2, h3, p1, p2, header, section {
     margin: 0;
     padding: 0;
   }
@@ -48,8 +48,14 @@ h2 { font-family: 'Cormorant Garamond', serif;
 
 #logo {
     padding: 16px;
+    }
+
+#imagen-logo { 
+    width: 50px;
+	height: 50px;
+	object-fit:scale-down
 }
- a{
+ header a{
     color: #F8F8F8;
     padding: 16px;
 }
@@ -64,7 +70,7 @@ a:hover {color: #87C39A}
     text-align: center;
     
 }
-#frase { padding: 32px}
+#frase { padding: 32px; text-align: center};
 
 #violeta {color:#6973A4}
 
@@ -88,3 +94,37 @@ a:hover {color: #87C39A}
 	height: 350px;
 	object-fit: cover;
 	 }
+
+#Especialidades {
+    display:block;
+    background-color: #6973A4;
+    color:#F8F8F8;
+    width: 100%;
+    padding-top: 48px;
+    align-content:  center;
+    justify-content: center;
+}
+
+#titulo {text-align: center;
+padding: 32px;}
+
+#parrafo { 
+    padding: 32px 100px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+#bloque {
+    text-align: center;
+    margin: 32px;
+    width: 25%
+}
+
+#frase{ 
+    padding: 100px;
+}
