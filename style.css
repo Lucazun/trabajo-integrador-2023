@@ -167,3 +167,23 @@ li{
     justify-content: center;
    
     }  
+
+#Recursos {
+
+    padding:200px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+iframe {
+
+    margin: 32px
+}
+
+#Consulta{
+    background-color: #87C39A;
+
+    
+}
