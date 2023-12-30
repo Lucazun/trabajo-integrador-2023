@@ -7,6 +7,7 @@ h1{
 h2 { font-family: 'Cormorant Garamond', serif;
     font-size: 40px;
     font-weight: 400;
+    color:#528C9C
     }
 
  h3 { font-family: 'Cormorant Garamond', serif;
@@ -30,13 +31,12 @@ h2 { font-family: 'Cormorant Garamond', serif;
  
      }
 
-
-
- body, h1, h2, h3, p1, p2, header, section {
+body, h1, h2, h3, p1, p2, header, section {
     margin: 0;
     padding: 0;
   }
- header {
+
+  header {
     background-color:#323A5A ;
     display: inline-flex;
     color: #F8F8F8;
@@ -83,9 +83,12 @@ a:hover {color: #87C39A}
 }
    
 #texto { width: 55%}
+
 .imagen { display: flex;
-     align-items: flex-end;
+     align-items: center;
+     justify-content: flex-end;
     height: auto;
+    
     }
 
 
@@ -105,11 +108,12 @@ a:hover {color: #87C39A}
     justify-content: center;
 }
 
-#titulo {text-align: center;
-padding: 32px;}
+#titulo h2{text-align: center;
+padding: 32px;
+color:#F8F8F8}
 
 #parrafo { 
-    padding: 32px 100px;
+    padding: 80px 100px;
 }
 
 .contenedor {
@@ -119,12 +123,47 @@ padding: 32px;}
     
 }
 
-#bloque {
+#bloque{
     text-align: center;
     margin: 32px;
     width: 25%
+    }
+    
+#bloque h2{
+    color:#F8F8F8
 }
+
 
 #frase{ 
     padding: 100px;
 }
+
+#Abordajes {
+    display: block;
+    flex-direction: column;
+    align-content: left;
+    padding: 80px;
+}
+
+li{
+        border: 1px solid black;
+       padding: 8px 32px;
+        margin-top: 1vh;
+}
+
+.contenedor2 {
+    padding-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+ 
+    }
+
+   
+    .imagen2{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    }  
