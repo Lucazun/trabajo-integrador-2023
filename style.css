@@ -66,4 +66,25 @@ a:hover {color: #87C39A}
 }
 #frase { padding: 32px}
 
+#violeta {color:#6973A4}
 
+#Sobre-mi {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 80px 48px;
+    justify-content: space-around;
+    align-content: center;
+}
+   
+#texto { width: 55%}
+.imagen { display: flex;
+     align-items: flex-end;
+    height: auto;
+    }
+
+
+.imagen  img{
+	width: 350px;
+	height: 350px;
+	object-fit: cover;
+	 }
