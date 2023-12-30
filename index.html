@@ -141,9 +141,136 @@
 
 <!-- HASTA ACÁ RECURSOS. -->
 
-<section id="Consulta"> <h2>Reservá tu turno</h2>
+<section id="Consulta"> <h2 id =
+    "reserva">Reservá tu turno</h2>
     <div class="formulario">
+        <form id="formulario" action="/procesar-turno" method="post">
+            <!-- Sección 1 -->
+            <div class="seccion" id="seccion1">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required>
         
-    </div>
+              <label for="email">Correo Electrónico:</label>
+              <input type="email" id="email" name="email" required>
 
-</section>
+             
+              <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+              <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+        
+              <label for="residencia">Lugar de Residencia:</label>
+              <select id="residencia" name="residencia" required>
+                <option value="" disabled selected>Selecciona tu lugar de residencia</option>
+                <option value="El Bolsón - Lago Puelo - El Hoyo">El Bolsón - Lago Puelo - El Hoyo</option>
+                <option value="Bariloche - Madryn - Comodoro Rivadavia">Bariloche - Madryn - Comodoro Rivadavia</option>
+                <option value="Otra">Otro</option>
+            
+              </select>
+        
+              <button type="button" onclick="mostrarSeccion(2)">Siguiente</button>
+            </div>
+        
+            <!-- Sección 2 -->
+            <div class="seccion" id="seccion2">
+              <label for="disponibilidad">Disponibilidad Horaria:</label>
+              <select id="disponibilidad" name="disponibilidad" required>
+                <option value="" disabled selected>Selecciona tu disponibilidad horaria</option>
+                <option value="Mañana 8:00 - 12:00">Mañana 8:00 - 12:00</option>
+                <option value="Tarde 14:00 - 17:00">Tarde 14:00 - 17:00</option>
+                <option value="Noche 18:00 - 20:00">Noche 18:00 - 20:00</option>
+                
+              </select>
+        
+              <label for="modalidad">Modalidad Preferida:</label>
+              <select id="modalidad" name="modalidad" required>
+                <option value="" disabled selected>Selecciona tu modalidad preferida</option>
+                <option value="Presencial">Presencial</option>
+                <option value="Virtual">Virtual</option>
+                <option value="Ambas">Ambas</option>
+               
+              </select>
+        
+              <label for="obraSocial">¿Tienes Obra Social?</label>
+              <select id="obraSocial" name="obraSocial" onchange="mostrarObraSocial()">
+                <option value="No">No</option>
+                <option value="Si">Sí</option>
+              </select>
+        
+              <div id="obraSocialDetalle" style="display: none;">
+                <label for="detalleObraSocial">Detalle de Obra Social:</label>
+                <input type="text" id="detalleObraSocial" name="detalleObraSocial">
+              </div>
+        
+              <button type="button" onclick="mostrarSeccion(1)">Anterior</button>
+              <button type="button" onclick="mostrarSeccion(3)">Siguiente</button>
+            </div>
+        
+            <!-- Sección 3 -->
+            <div class="seccion" id="seccion3">
+
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono" required pattern="[0-9]{9}">
+          
+              <label for="consulta">Dejame tu consulta:</label>
+              <textarea id="consulta" name="consulta" rows="4" required></textarea>
+        
+              <button type="button" onclick="mostrarSeccion(2)">Anterior</button>
+              <button type="submit">Reservar Turno</button>
+            </div>
+          </form>
+        
+          <script>
+            function mostrarSeccion(numeroSeccion) {
+              var secciones = document.getElementsByClassName("seccion");
+        
+              for (var i = 0; i < secciones.length; i++) {
+                secciones[i].style.display = "none";
+              }
+        
+              document.getElementById("seccion" + numeroSeccion).style.display = "block";
+            }
+        
+            function mostrarObraSocial() {
+              var obraSocialSelect = document.getElementById("obraSocial");
+              var obraSocialDetalle = document.getElementById("obraSocialDetalle");
+        
+              if (obraSocialSelect.value === "Si") {
+                obraSocialDetalle.style.display = "block";
+              } else {
+                obraSocialDetalle.style.display = "none";
+              }
+            }
+          </script>
+          </section>
+
+<footer>
+    <p>© 2023 Mi Sitio Web</p>
+<div class="redes-sociales">
+    <a href="https://www.linkedin.com/in/lucazunigabrenes/" target="_blank"><svg fill="#ffffff" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M41.4,508.1H-8.5V348.4h49.9 V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7c18.4,0,29.7,11.9,30.1,27.7 C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4c-14.9,0-23.2,10-27,19.6 c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6c35.5,0,63.3,23,63.3,72.4V508.1z "></path> </g></svg></a>
+        
+    <a href="https://wa.me/+5492944298656" target="_blank"><i class="fab fa-whatsapp"></i>   
+         <svg width="30px" height="30px" viewBox="0 0 20 20" version="1.1"
+         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#f8f8f8" stroke="#f8f8f8">
+         <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+        </g><g id="SVGRepo_iconCarrier"> <title>whatsapp [#128]</title> <desc>Created with Sketch.</desc> <defs> </defs> 
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" 
+            transform="translate(-300.000000, -7599.000000)" fill="#f8f8f8"> <g id="icons" transform="translate(56.000000, 
+            160.000000)"> <path d="M259.821,7453.12124 C259.58,7453.80344 258.622,7454.36761 257.858,7454.53266 C257.335,7454.64369
+             256.653,7454.73172 254.355,7453.77943 C251.774,7452.71011 248.19,7448.90097 248.19,7446.36621 C248.19,7445.07582 
+             248.934,7443.57337 250.235,7443.57337 C250.861,7443.57337 250.999,7443.58538 251.205,7444.07952 C251.446,7444.6617
+              252.034,7446.09613 252.104,7446.24317 C252.393,7446.84635 251.81,7447.19946 251.387,7447.72462 C251.252,7447.88266 
+              251.099,7448.05372 251.27,7448.3478 C251.44,7448.63589 252.028,7449.59418 252.892,7450.36341 C254.008,7451.35771
+               254.913,7451.6748 255.237,7451.80984 C255.478,7451.90987 255.766,7451.88687 255.942,7451.69881 C256.165,7451.45774 
+               256.442,7451.05762 256.724,7450.6635 C256.923,7450.38141 257.176,7450.3464 257.441,7450.44643 C257.62,7450.50845 
+               259.895,7451.56477 259.991,7451.73382 C260.062,7451.85686 260.062,7452.43903 259.821,7453.12124 M254.002,7439 
+               L253.997,7439 L253.997,7439 C248.484,7439 244,7443.48535 244,7449 C244,7451.18666 244.705,7453.21526 
+               245.904,7454.86076 L244.658,7458.57687 L248.501,7457.3485 C250.082,7458.39482 251.969,7459 254.002,7459 
+               C259.515,7459 264,7454.51465 264,7449 C264,7443.48535 259.515,7439 254.002,7439" id="whatsapp-[#128]"> </path>
+             </g> </g> </g> </g></svg></a>
+
+</div>
+        
+       
+    
+    
+  </footer>
+
